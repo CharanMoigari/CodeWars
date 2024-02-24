@@ -1,38 +1,122 @@
-import React, { FormEvent, useState } from 'react';
-import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import React from "react"
+import { useState, FormEvent } from "react"
+import "./Login.css"
+import { GoogleLogin, GoogleCredentialResponse, CredentialResponse } from "@react-oauth/google"
+import { useNavigate } from "react-router-dom"
+import axios from "axios"
+const Login = () => {
+    const navigate = useNavigate()
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
-export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate(); 
+    const handleEmailLogin = async (e: FormEvent) => {
+      e.preventDefault()
+      try{
+        const response=await axios.post("http://localhost:4000/api/auth/login",{email,password})
+        if(response.status===200){
+          localStorage.setItem("token",response.data.token)
+          navigate('/home')
+        }
 
-  const handleLogin= async (e: FormEvent) => {
-    e.preventDefault(); 
-
-    try {
-      const response = await axios.post('http://localhost:4000/api/auth/login', {
-        email,
-        password
-      });
-      if (response.status === 200 || response.status===400) { 
-        navigate("/user-interface"); 
       }
+      catch(error){
+        console.log("error in handleEmailLogin",error)
 
-    } catch (error) {
-      console.log(error);
+      }
+ 
     }
-  };
 
-  return (
-    <div>
-      <form onSubmit={handleLogin}>
-        <label htmlFor="email">Email</label>
-        <input id="email" name="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
-        <label htmlFor="password">Password</label>
-        <input id="password" name="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
-        <button type='submit'>Login</button>
-      </form>
-    </div>
-  );
-}
+    const handleGoogleLogin = async (credentialResponse: CredentialResponse) => {
+
+      const token = credentialResponse.credential
+       try{
+        const response = await axios.post("http://localhost:4000/api/auth/google-login",{token})
+        console.log(response)
+        if(response.status===200){
+            localStorage.setItem("token",response.data.token)
+            navigate('/home')
+        }
+       }
+       catch(error){
+        console.log(error)
+       }  
+        
+    }
+
+    return (
+        <>
+            <div className="container" id="login">
+                <div id="login-heading">
+                    <h1>Login</h1>
+                </div>
+                <div id="googleLogin">
+                    
+                    <GoogleLogin onSuccess={handleGoogleLogin} />
+                </div>
+                <div id="login-container">
+                    <hr />
+
+                    <div id="login-form-container">
+                        <form onSubmit={handleEmailLogin}>
+                            <div className="input-container">
+                                <input
+                                    className="login-input"
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={email}
+                                    autoComplete={"on"}
+                                    autoFocus={true}
+                                    placeholder="Email"
+                                    required
+                                />
+                                <label className="label" htmlFor="email">
+                                    Email
+                                </label>
+                                <div className="input-error"></div>
+                            </div>
+                            <div className="input-container">
+                                <input
+                                    className="login-input"
+                                    type="password"
+                                    name="password"
+                                    id="password"
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    value={password}
+                                    autoComplete="on"
+                                    placeholder="Password"
+                                    required
+                                />
+                                <label className="label" htmlFor="password">
+                                    Password
+                                </label>
+                                <div className="input-error"></div>
+                            </div>
+
+                            <div id="login-checkbox">
+                                <input type="checkbox" name="remember" id="remember" />
+                                <label id="check-tick" htmlFor="remember"></label>
+                                <div>
+                                    <span>Remember credentials</span>
+                                </div>
+                            </div>
+                            <div id="signupButtonContainer">
+                                <button type="submit" >Login</button>
+                                <button type="button" onClick={() => navigate("/signup")}>
+                                    SignUp
+                                </button>
+                                <button type="button" onClick={() => navigate("/forgotPassword")}>
+                                    Forgot Password
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+    }
+
+
+export default Login

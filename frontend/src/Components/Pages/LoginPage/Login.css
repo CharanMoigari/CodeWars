@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap");
+
+#login * {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+#login hr {
+    border-top: 2px dashed #b1abab;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+#login #login-heading h1 {
+    font-size: 3.56rem;
+    line-height: 110%;
+    margin: 1.78rem 0 1.424rem 0;
+    text-align: center;
+}
+
+#login #googlelogin {
+    height: 50px;
+    /* border: 2px solid rgb(172, 169, 169); */
+    margin: 10px;
+    /* border-radius: 10px; */
+    border: 0;
+    box-shadow: 0px 1px 2px 1px gray;
+    cursor: pointer;
+}
+#login #googlelogin img {
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+}
+
+#login #googleLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+#login .login-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0 0 20px 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+    /* transition: all 0.2s; */
+}
+
+#login .input-container {
+    position: relative;
+    margin: 30px 0px;
+}
+#login .label {
+    color: #9e9e9e;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    transition: all 0.3s;
+    font-size: 1rem;
+    cursor: text;
+}
+#login .login-input:focus {
+    border-bottom: 2px solid #536dfe;
+}
+
+#login .login-input::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+#login .login-input::-moz-placeholder {
+    opacity: 0;
+}
+
+#login .login-input:-ms-input-placeholder {
+    opacity: 0;
+}
+
+#login .login-input::-ms-input-placeholder {
+    opacity: 0;
+}
+
+#login .login-input::placeholder {
+    opacity: 0;
+}
+#login .login-input:focus + .label,
+#login .login-input:not(:placeholder-shown) + .label {
+    font-size: 0.8rem;
+    color: #536dfe;
+    top: -10px;
+}
+
+#login #login-form-container {
+    /* border: 2px solid black; */
+    padding: 20px;
+    height: 100%;
+    width: 66.6666666667%;
+}
+
+#login #login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#login #login-checkbox {
+    width: 100%;
+    height: 80px;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#login #login-checkbox span {
+    color: gray;
+    font-size: 1.1rem;
+}
+
+#login #signupButtonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#login #signupButtonContainer button {
+    padding: 7px 15px;
+    background-color: #536dfe;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 40px;
+    line-height: 36px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#login #signupButtonContainer button:hover {
+    opacity: 0.8;
+}
+
+#login #check-tick {
+    height: 20px;
+    width: 20px;
+    border: 2px solid black;
+    /* margin: 20px */
+    margin: 20px;
+    transition: all 0.2s;
+}
+
+#login #login-checkbox input[type="checkbox"] {
+    /* visibility: hidden; */
+
+    display: none;
+
+    /* le */
+}
+
+#login #login-checkbox input[type="checkbox"]:checked ~ #check-tick {
+    /* background-color: black; */
+    border: 0px;
+    border-bottom: 2px solid #536dfe;
+    border-right: 2px solid #536dfe;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 25px;
+    margin: 26px;
+}
