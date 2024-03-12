@@ -1,0 +1,112 @@
+/* ProblemForm.css */
+
+/* Styles for the container */
+.container {
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+#description{
+  height:
+  15vh;
+}
+#inputFormat ,#outputFormat{
+  height: 15vh;
+}
+/* Styles for form elements */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  resize: none;
+}
+
+.sample-io textarea {
+  margin-bottom: 10px;
+  height: 150px; /* Set the fixed height */
+  width: 100%; /* Set width to 100% */
+  resize: none !important; /* Disable resizing */
+  overflow-y: auto; /* Enable vertical scrollbar when content exceeds the height */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.sample-box, .testcase-box {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.form-btn {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.form-btn:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.form-btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+/* ProblemForm.css */
+
+.sample-box {
+  display: flex;
+}
+
+.input-box,
+.output-box,
+.explanation-box {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-box label,
+.output-box label,
+.explanation-box label {
+  font-weight: bold;
+}
+
+.input-box div,
+.output-box div,
+.explanation-box div {
+  margin-top: 5px;
+}
+.tags-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.tag-label {
+  display: flex;
+  align-items: center;
+}
+
+.tag-checkbox {
+  margin-right: 5px;
+}

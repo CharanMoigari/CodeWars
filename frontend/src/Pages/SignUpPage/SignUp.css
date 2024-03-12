@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap");
+
+#signup * {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+#signup hr {
+    border-top: 2px dashed #b1abab;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+#signup #login-heading h1 {
+    font-size: 3.56rem;
+    line-height: 110%;
+    margin: 1.78rem 0 1.424rem 0;
+    text-align: center;
+}
+
+#signup #googlelogin {
+    height: 50px;
+    margin: 10px;
+    border: 0;
+    box-shadow: 0px 1px 2px 1px gray;
+    cursor: pointer;
+}
+#signup #googlelogin img {
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+}
+
+#signup #googleLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+#signup .login-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0 0 20px 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+}
+
+#signup .input-container {
+    position: relative;
+    margin: 30px 0px;
+}
+#signup .label {
+    color: #9e9e9e;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    transition: all 0.3s;
+    font-size: 1rem;
+    cursor: text;
+}
+#signup .login-input:focus {
+    border-bottom: 2px solid #536dfe;
+}
+
+#signup .login-input::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+#signup .login-input::-moz-placeholder {
+    opacity: 0;
+}
+
+#signup .login-input:-ms-input-placeholder {
+    opacity: 0;
+}
+
+#signup .login-input::-ms-input-placeholder {
+    opacity: 0;
+}
+
+#signup .login-input::placeholder {
+    opacity: 0;
+}
+#signup .login-input:focus + .label,
+#signup .login-input:not(:placeholder-shown) + .label {
+    font-size: 0.8rem;
+    color: #536dfe;
+    top: -10px;
+}
+
+#signup #login-form-container {
+    padding: 20px;
+    height: 100%;
+    width: 66.6666666667%;
+}
+
+#signup #login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#signup #login-checkbox {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#signup #login-checkbox span {
+    color: gray;
+    font-size: 1.1rem;
+}
+
+#signup #signupButtonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#signup #signupButtonContainer button {
+    padding: 7px 15px;
+    background-color: #536dfe;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 40px;
+    line-height: 36px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#signup #signupButtonContainer button:hover {
+    opacity: 0.8;
+}
+
+#signup #check-tick {
+    height: 20px;
+    width: 20px;
+    border: 2px solid black;
+    margin: 20px;
+    transition: all 0.2s;
+}
+
+#signup #login-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+#signup #login-checkbox input[type="checkbox"]:checked ~ #check-tick {
+    border: 0px;
+    border-bottom: 2px solid #536dfe;
+    border-right: 2px solid #536dfe;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 25px;
+    margin: 26px;
+}
